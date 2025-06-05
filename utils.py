@@ -19,3 +19,12 @@ def multiply(a: int, b: int) -> int:
 def divide(a: int, b: int) -> float:
     """This code is for dividing"""
     return a / b
+
+
+def convert_to_binary(a: int) -> str:
+    """This code is for binary convertion"""
+    if not isinstance(a, int):
+        raise ValueError("Not an int")
+    if a < 0 or a > 100:
+        raise ValueError("Not in range")
+    return bin(a)[2:]
