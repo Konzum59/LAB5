@@ -1,7 +1,5 @@
 """Super cool code :3"""
 
-from multiprocessing.managers import Value
-
 
 def add(a: int, b: int) -> int:
     """This code is for adding"""
@@ -24,6 +22,7 @@ def divide(a: int, b: int) -> float:
 
 
 def convert_to_binary(a: int) -> str:
+    """This code is for binary convertion"""
     if not isinstance(a, int):
         raise ValueError("Not an int")
     if a < 0 or a > 100:
