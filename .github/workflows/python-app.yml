@@ -24,5 +24,5 @@ jobs:
         pylint ./utils.py
     - name: Format with Black
       run: |
-        black --check.
+        black --check .
 
