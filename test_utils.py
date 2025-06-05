@@ -1,5 +1,6 @@
 import pytest
 import utils
+from utils import convert_to_binary
 
 
 @pytest.mark.parametrize(
@@ -30,3 +31,17 @@ def test_multiply(a, b, expected):
 def test_divide(a, b, expected):
     result = utils.divide(a, b)
     assert result == expected
+
+
+@pytest.mark.parametrize(
+    "a, expected", [(0, "0"), (1, "1"), (2, "10"), (31, "11111"), (100, "1100100")]
+)
+def test_corect(a, expected):
+    result = utils.convert_to_binary(a)
+    assert result == expected
+
+
+@pytest.mark.parametrize("a", [-1, "gaming", 5.5, 101])
+def test_wrong(a):
+    with pytest.raises(ValueError):
+        utils.convert_to_binary(a)
